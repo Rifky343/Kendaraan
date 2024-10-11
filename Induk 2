@@ -1,0 +1,23 @@
+class Mesin {
+    private String tipe;
+
+    public Mesin() {
+        this.tipe = "Tidak diketahui";
+    }
+
+    public Mesin(String tipe) {
+        this.tipe = tipe;
+    }
+
+    public String getTipe() {
+        return tipe;
+    }
+
+    public void setTipe(String tipe) {
+        this.tipe = tipe;
+    }
+
+    public void start() {
+        System.out.println("Mesin " + tipe + " sedang dinyalakan.");
+    }
+}
