@@ -1,0 +1,27 @@
+class Motor extends Kendaraan {
+    private boolean punyaKeranjang;
+
+    public Motor() {
+        super();
+        this.punyaKeranjang = false;
+    }
+
+    public Motor(String merek, int tahun, boolean punyaKeranjang) {
+        super(merek, tahun); // Panggil konstruktor superclass
+        this.punyaKeranjang = punyaKeranjang;
+    }
+
+    public boolean isPunyaKeranjang() {
+        return punyaKeranjang;
+    }
+
+    public void setPunyaKeranjang(boolean punyaKeranjang) {
+        this.punyaKeranjang = punyaKeranjang;
+    }
+
+    @Override
+    public void info() {
+        super.info();
+        System.out.println("Punya Keranjang: " + (punyaKeranjang ? "Ya" : "Tidak"));
+    }
+}
