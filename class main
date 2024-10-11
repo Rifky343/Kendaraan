@@ -1,0 +1,13 @@
+public class Main {
+    public static void main(String[] args) {
+        Mobil mobil = new Mobil("Toyota", 2020, 4);
+        Motor motor = new Motor("Honda", 2018, true);
+        Truk truk = new Truk("Mitsubishi", 2015, 10.5);
+
+        mobil.info();
+        System.out.println();
+        motor.info();
+        System.out.println();
+        truk.info();
+    }
+}
