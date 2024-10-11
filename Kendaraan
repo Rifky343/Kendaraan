@@ -1,0 +1,156 @@
+class Kendaraan {
+    private String merek;
+    private int tahun;
+
+    public Kendaraan() {
+        this.merek = "Tidak diketahui";
+        this.tahun = 0;
+    }
+
+    public Kendaraan(String merek, int tahun) {
+        this.merek = merek;
+        this.tahun = tahun;
+    }
+
+    public String getMerek() {
+        return merek;
+    }
+
+    public void setMerek(String merek) {
+        this.merek = merek;
+    }
+
+    public int getTahun() {
+        return tahun;
+    }
+
+    public void setTahun(int tahun) {
+        this.tahun = tahun;
+    }
+
+    public void info() {
+        System.out.println("Merek: " + merek + ", Tahun: " + tahun);
+    }
+}
+
+class Mesin {
+    private String tipe;
+
+    public Mesin() {
+        this.tipe = "Tidak diketahui";
+    }
+
+    public Mesin(String tipe) {
+        this.tipe = tipe;
+    }
+
+    public String getTipe() {
+        return tipe;
+    }
+
+    public void setTipe(String tipe) {
+        this.tipe = tipe;
+    }
+
+    public void start() {
+        System.out.println("Mesin " + tipe + " sedang dinyalakan.");
+    }
+}
+
+class Mobil extends Kendaraan {
+    private int jumlahPintu;
+
+    public Mobil() {
+        super();
+        this.jumlahPintu = 0;
+    }
+
+    public Mobil(String merek, int tahun, int jumlahPintu) {
+        super(merek, tahun);
+        this.jumlahPintu = jumlahPintu;
+    }
+
+    public int getJumlahPintu() {
+        return jumlahPintu;
+    }
+
+    public void setJumlahPintu(int jumlahPintu) {
+        this.jumlahPintu = jumlahPintu;
+    }
+
+    @Override
+    public void info() {
+        super.info();
+        System.out.println("Jumlah Pintu: " + jumlahPintu);
+    }
+}
+
+class Motor extends Kendaraan {
+    private boolean punyaKeranjang;
+
+    public Motor() {
+        super();
+        this.punyaKeranjang = false;
+    }
+
+    public Motor(String merek, int tahun, boolean punyaKeranjang) {
+        super(merek, tahun);
+        this.punyaKeranjang = punyaKeranjang;
+    }
+
+    public boolean isPunyaKeranjang() {
+        return punyaKeranjang;
+    }
+
+    public void setPunyaKeranjang(boolean punyaKeranjang) {
+        this.punyaKeranjang = punyaKeranjang;
+    }
+
+    @Override
+    public void info() {
+        super.info();
+        System.out.println("Punya Keranjang: " + (punyaKeranjang ? "Ya" : "Tidak"));
+    }
+}
+
+class Truk extends Kendaraan {
+    private double kapasitasMuat;
+
+    public Truk() {
+        super();
+        this.kapasitasMuat = 0.0;
+    }
+
+    public Truk(String merek, int tahun, double kapasitasMuat) {
+        super(merek, tahun);
+        this.kapasitasMuat = kapasitasMuat;
+    }
+
+    public double getKapasitasMuat() {
+        return kapasitasMuat;
+    }
+
+    public void setKapasitasMuat(double kapasitasMuat) {
+        this.kapasitasMuat = kapasitasMuat;
+    }
+
+    @Override
+    public void info() {
+        super.info();
+        System.out.println("Kapasitas Muat: " + kapasitasMuat + " ton");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Mobil mobil = new Mobil("Toyota", 2020, 4);
+        Motor motor = new Motor("Honda", 2018, true);
+        Truk truk = new Truk("Mitsubishi", 2015, 10.5);
+
+        mobil.info();
+        System.out.println();
+        motor.info();
+        System.out.println();
+        truk.info();
+    }
+}
